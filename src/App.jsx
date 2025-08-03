@@ -39,6 +39,7 @@ const App = () => {
         localStorage.setItem("grocery-items", [
             JSON.stringify(newGroceryItems),
         ]);
+        toast.success("item added to the list");
     };
 
     const editItem = () => {
@@ -55,16 +56,15 @@ const App = () => {
         localStorage.setItem("grocery-items", [
             JSON.stringify(newGroceryItems),
         ]);
+        toast.success("item edited in the list");
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         if (editFlag) {
             editItem();
-            toast.success("item edited in the list");
         } else {
             addItem();
-            toast.success("item added to the list");
         }
     };
 
