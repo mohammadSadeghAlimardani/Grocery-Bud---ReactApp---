@@ -17,15 +17,15 @@ const App = () => {
             (singleGrocery) => singleGrocery.id !== id
         );
         setGroceryItems(newGroceryItems);
-        toast.success("Item Removed From List");
         localStorage.setItem("grocery-items", [
             JSON.stringify(newGroceryItems),
         ]);
+        toast.success("Item Removed From List");
     };
 
     const addItem = () => {
         if(inputValue.length === 0){
-            toast.error("please provide some value");
+            toast.error("Please Provide Some Value");
             return;
         }
         const newSingleGrocery = {
@@ -39,7 +39,7 @@ const App = () => {
         localStorage.setItem("grocery-items", [
             JSON.stringify(newGroceryItems),
         ]);
-        toast.success("item added to the list");
+        toast.success("Item Added To The List");
     };
 
     const editItem = () => {
@@ -56,7 +56,7 @@ const App = () => {
         localStorage.setItem("grocery-items", [
             JSON.stringify(newGroceryItems),
         ]);
-        toast.success("item edited in the list");
+        toast.success("Item Edited In The List");
     };
 
     const handleSubmit = (event) => {
