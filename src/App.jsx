@@ -17,13 +17,17 @@ const App = () => {
             (singleGrocery) => singleGrocery.id !== id
         );
         setGroceryItems(newGroceryItems);
-        toast.error("Item Removed From List");
+        toast.success("Item Removed From List");
         localStorage.setItem("grocery-items", [
             JSON.stringify(newGroceryItems),
         ]);
     };
 
     const addItem = () => {
+        if(inputValue.length === 0){
+            toast.error("please provide some value");
+            return;
+        }
         const newSingleGrocery = {
             id: nanoid(),
             text: inputValue,
